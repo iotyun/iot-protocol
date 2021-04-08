@@ -1,0 +1,51 @@
+{
+    "name": "iotyun/iot-protocol",
+    "description": "Internet of things communication protocol analysis plugs",
+    "homepage": "http://www.iotyun.vip/",
+    "keywords": [
+        "NB-IOT",
+        "huawei",
+        "dianxin",
+        "iot",
+        "sdk"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "iotyun",
+            "email": "ytpay@qq.com",
+            "homepage": "http://www.iotyun.vip/"
+        }
+    ],
+
+    "support": {
+        "email": "ytpay@qq.com"
+    },
+    "require": {
+        "php": ">=7.1.0",
+        "ext-openssl": "*",
+        "topthink/framework": "^6.0.0",
+        "ext-fileinfo": "*",
+        "workerman/gateway-worker": "^3.0.0",
+        "workerman/gatewayclient": "^3.0.13"
+        
+    },
+	"autoload": {
+        "psr-4": {
+            "iotyun\\tcp\\": "src"
+        }
+    },
+    "extra": {
+        "think":{
+            "services":[
+                "iotyun\\tcp\\Service"
+            ],
+            "config":{
+                "tcp_callback": "src/config/tcp_callback.php",
+                "iotyun_tcp": "src/config/gateway.php"
+            }
+        }
+    },
+
+    "minimum-stability": "dev"
+}
