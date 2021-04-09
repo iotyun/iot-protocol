@@ -25,27 +25,15 @@
         "php": ">=7.1.0",
         "ext-openssl": "*",
         "topthink/framework": "^6.0.0",
-        "ext-fileinfo": "*",
-        "workerman/gateway-worker": "^3.0.0",
-        "workerman/gatewayclient": "^3.0.13"
+        "ext-fileinfo": "*"
         
     },
 	"autoload": {
         "psr-4": {
-            "iotyun\\tcp\\": "src"
+            "iotyun\\protocol\\": "src"
         }
     },
-    "extra": {
-        "think":{
-            "services":[
-                "iotyun\\tcp\\Service"
-            ],
-            "config":{
-                "tcp_callback": "src/config/tcp_callback.php",
-                "iotyun_tcp": "src/config/gateway.php"
-            }
-        }
-    },
+
 
     "minimum-stability": "dev"
 }

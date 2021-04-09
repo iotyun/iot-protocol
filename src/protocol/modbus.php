@@ -1,4 +1,11 @@
-
 <?php
 
-namespace ModbusTcpClient\Utils;
+namespace iot\protocol;
+
+class Modbus
+{
+    public function configure()
+    {
+        return;
+    }
+}
