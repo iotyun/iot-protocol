@@ -1,0 +1,108 @@
+<?php
+declare(strict_types=1);
+
+namespace iot\iotprotocol\Packet\ModbusFunction;
+
+use iot\iotprotocol\Exception\InvalidArgumentException;
+use iot\iotprotocol\Exception\ModbusException;
+use iot\iotprotocol\Packet\ByteCountResponse;
+use iot\iotprotocol\Packet\ModbusPacket;
+use iot\iotprotocol\Utils\Types;
+
+/**
+ * Response for Read Coils (FC=01)
+ *
+ * Example packet: \x81\x80\x00\x00\x00\x05\x03\x01\x02\xCD\x6B
+ * \x81\x80 - transaction id
+ * \x00\x00 - protocol id
+ * \x00\x05 - number of bytes in the message (PDU = ProtocolDataUnit) to follow
+ * \x03 - unit id
+ * \x01 - function code
+ * \x02 - coils byte count
+ * \xCD\x6B - coils data (2 bytes = 2 * 8 coils)
+ *
+ */
+class ReadCoilsResponse extends ByteCountResponse implements \ArrayAccess, \IteratorAggregate
+{
+    /**
+     * @var array
+     */
+    private $coils;
+
+    /**
+     * @var int
+     */
+    private $coilsBytesLength;
+
+    public function __construct(string $rawData, int $unitId = 0, int $transactionId = null)
+    {
+        $data = substr($rawData, 1);
+        $this->coilsBytesLength = strlen($data);
+        $this->coils = Types::binaryStringToBooleanArray($data);
+
+        parent::__construct($rawData, $unitId, $transactionId);
+    }
+
+    public function getFunctionCode(): int
+    {
+        return ModbusPacket::READ_COILS;
+    }
+
+    public function getCoils(): array
+    {
+        return iterator_to_array($this->getIterator());
+    }
+
+    public function __toString(): string
+    {
+        return parent::__toString()
+            . Types::byteArrayToByte(Types::booleanArrayToByteArray($this->coils));
+    }
+
+    protected function getLengthInternal(): int
+    {
+        return parent::getLengthInternal() + $this->coilsBytesLength;
+    }
+
+    public function getIterator()
+    {
+        $index = $this->getStartAddress();
+        foreach ($this->coils as $coil) {
+            yield $index++ => $coil;
+        }
+    }
+
+    /**
+     * @param $offset
+     * @param $value
+     * @throws ModbusException
+     */
+    public function offsetSet($offset, $value)
+    {
+        throw new ModbusException('setting value in response is not supported!');
+    }
+
+    /**
+     * @param $offset
+     * @throws ModbusException
+     */
+    public function offsetUnset($offset)
+    {
+        throw new ModbusException('unsetting value in response is not supported!');
+    }
+
+    public function offsetExists($offset)
+    {
+        return isset($this->coils[$offset - $this->getStartAddress()]);
+    }
+
+    public function offsetGet($offset)
+    {
+        $address = $offset - $this->getStartAddress();
+        $endAddress = ($this->getByteCount() * 8);
+        if ($address < 0 || $address >= $endAddress) {
+            throw new InvalidArgumentException('offset out of bounds');
+        }
+        return $this->coils[$offset - $this->getStartAddress()];
+    }
+}

@@ -1,6 +1,7 @@
 <?php
 
-namespace iot\iotprotocol\utils;
+namespace iot\iotprotocol\Utils;
+
 
 use iot\iotprotocol\Exception\InvalidArgumentException;
 use iot\iotprotocol\Exception\OverflowException;
@@ -632,4 +633,5 @@ final class Types
 
         return pack("a{$byteCount}", $raw);
     }
+
 }

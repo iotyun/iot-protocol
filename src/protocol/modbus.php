@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\protocol;
+namespace iot\iotprotocol\protocol;
 
 class Modbus
 {
