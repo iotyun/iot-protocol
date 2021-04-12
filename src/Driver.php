@@ -6,7 +6,7 @@ use think\facade\Log;
 
 class Driver
 {
-	public static function getRegisterInfo($data)
+	public function getRegisterInfo($data)
     {
         // $app = new Application;
         // $app->initialize();
@@ -18,7 +18,7 @@ class Driver
 		$data_array = array('appid' => $appid, 'productid' => $productid, 'driverid' => $driverid);
 		return json_encode($data_array);
     }
-	public static function getMessageInfo($client_id, $data)
+	public function getMessageInfo($client_id, $data)
     {
 		$uid = Gateway::bindUid($client_id, bin2hex($data));
 		$driver = $this->getRegisterInfo(hex2bin($uid));
