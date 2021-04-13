@@ -3,10 +3,11 @@
 namespace iotyun\iotprotocol;
 
 use think\facade\Log;
+use GatewayWorker\Lib\Gateway;
 
 class Driver
 {
-	public function getRegisterInfo($data)
+	public static function getRegisterInfo($data)
     {
         // $app = new Application;
         // $app->initialize();
@@ -18,20 +19,48 @@ class Driver
 		$data_array = array('appid' => $appid, 'productid' => $productid, 'driverid' => $driverid);
 		return json_encode($data_array);
     }
-	public function getMessageInfo($client_id, $data)
+	public static function getMessageInfo($client_id, $data)
     {
-		$uid = Gateway::bindUid($client_id, bin2hex($data));
-		$driver = $this->getRegisterInfo(hex2bin($uid));
-		Log::channel('iottcp')->info($driver_json);	//解析信息记入日志
+		$uid = Gateway::getUidByClientId($client_id);
+		$driver = json_decode(self::getRegisterInfo(hex2bin($uid)));
+		//Log::channel('iottcp')->info('getMessageInfo ' . $driver);	//解析信息记入日志
         // $app = new Application;
         // $app->initialize();
 		// $appid = $data[0] . $data[1];
 		// $pid = $data[2] . $data[3];
-		$driver = hexdec(bin2hex($data[0]));
+		$driver_addr = hexdec(bin2hex($data[0]));
 		$function_code = hexdec(bin2hex($data[1]));
-		$productid = hexdec(bin2hex($data[2] . $data[3]));
-		$driverid = hexdec(bin2hex($data[4] . $data[5] . $data[6] . $data[7]));
-		$data_array = array('appid' => $appid, 'productid' => $productid, 'driverid' => $driverid);
+		$data_length = hexdec(bin2hex($data[2]));
+		switch ($function_code)
+		{
+			case 0x01:
+				$code_info = "读寄存器输出状态";
+				break;  
+			case 0x02:
+				$code_info = "读开关量输入状态";
+				break;
+			case 0x03:
+				$code_info = "读数据寄存器值";
+				break;
+			case 0x04:
+				$code_info = "读数据寄存器值";
+				break;
+			case 0x05:
+				$code_info = "遥控单路继电器输出";
+				break;
+			case 0x0F:
+				$code_info = "遥控多路继电器输出";
+				break;
+			case 0x10:
+				$code_info = "写设置寄存器";
+				break;
+			default:
+				$code_info = "不存在的命令";
+				break;
+		}
+		
+		$data_array = array('appid' => $driver->appid, 'productid' => $driver->productid, 'driverid' => $driver_addr, 'function_code' => $function_code, 'code_info' => $code_info,  'data_length' => $data_length);
 		return json_encode($data_array);
+		//return $info;
     }
 }
