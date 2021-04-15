@@ -41,6 +41,8 @@ class Driver
 				break;
 			case 0x03:
 				$code_info = "读数据寄存器值";
+				
+				
 				break;
 			case 0x04:
 				$code_info = "读数据寄存器值";
