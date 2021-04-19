@@ -6,6 +6,6 @@ class Modbus
 {
     public function configure()
     {
-        return;
+        return 1;
     }
 }
