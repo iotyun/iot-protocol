@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\iotprotocol\Exception;
+namespace iotyun\iotprotocol\Exception;
 
 
 class InvalidArgumentException extends ModbusException

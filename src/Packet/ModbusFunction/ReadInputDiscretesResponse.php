@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace iot\iotprotocol\Packet\ModbusFunction;
+namespace iotyun\iotprotocol\Packet\ModbusFunction;
 
-use iot\iotprotocol\Packet\ModbusPacket;
+use iotyun\iotprotocol\Packet\ModbusPacket;
 
 /**
  * Response for Read Input Discretes (FC=02)

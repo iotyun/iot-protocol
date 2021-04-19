@@ -2,9 +2,9 @@
 
 namespace Tests\integration;
 
-use iot\iotprotocol\Network\BinaryStreamConnection;
-use iot\iotprotocol\Network\NonBlockingClient;
-use iot\iotprotocol\Packet\ProtocolDataUnitRequest;
+use iotyun\iotprotocol\Network\BinaryStreamConnection;
+use iotyun\iotprotocol\Network\NonBlockingClient;
+use iotyun\iotprotocol\Packet\ProtocolDataUnitRequest;
 use PHPUnit\Framework\TestCase;
 use React\ChildProcess\Process;
 use React\EventLoop\Factory;

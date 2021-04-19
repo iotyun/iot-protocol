@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\iotprotocol\Composer;
+namespace iotyun\iotprotocol\Composer;
 
 
 abstract class AddressSplitter

@@ -1,9 +1,9 @@
 <?php
 
-namespace iot\iotprotocol\Utils;
+namespace iotyun\iotprotocol\Utils;
 
 
-use iot\iotprotocol\Network\IOException;
+use iotyun\iotprotocol\Network\IOException;
 
 final class Packet
 {

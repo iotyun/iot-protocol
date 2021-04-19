@@ -1,21 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace ModbusTcpClient\Packet;
+namespace iotyun\iotprotocol\Packet;
 
 
-use iot\iotprotocol\Exception\ModbusException;
-use iot\iotprotocol\Exception\ParseException;
-use iot\iotprotocol\Packet\ModbusFunction\ReadCoilsResponse;
-use iot\iotprotocol\Packet\ModbusFunction\ReadHoldingRegistersResponse;
-use iot\iotprotocol\Packet\ModbusFunction\ReadInputDiscretesResponse;
-use iot\iotprotocol\Packet\ModbusFunction\ReadInputRegistersResponse;
-use iot\iotprotocol\Packet\ModbusFunction\ReadWriteMultipleRegistersResponse;
-use iot\iotprotocol\Packet\ModbusFunction\WriteMultipleCoilsResponse;
-use iot\iotprotocol\Packet\ModbusFunction\WriteMultipleRegistersResponse;
-use iot\iotprotocol\Packet\ModbusFunction\WriteSingleCoilResponse;
-use iot\iotprotocol\Packet\ModbusFunction\WriteSingleRegisterResponse;
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Exception\ModbusException;
+use iotyun\iotprotocol\Exception\ParseException;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadCoilsResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadHoldingRegistersResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadInputDiscretesResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadInputRegistersResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadWriteMultipleRegistersResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\WriteMultipleCoilsResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\WriteMultipleRegistersResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\WriteSingleCoilResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\WriteSingleRegisterResponse;
+use iotyun\iotprotocol\Utils\Types;
 
 class ResponseFactory
 {

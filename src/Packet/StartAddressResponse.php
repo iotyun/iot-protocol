@@ -1,9 +1,9 @@
 <?php
 
-namespace iot\iotprotocol\Packet;
+namespace iotyun\iotprotocol\Packet;
 
 
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Utils\Types;
 
 abstract class StartAddressResponse extends ProtocolDataUnit implements ModbusResponse
 {

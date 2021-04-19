@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace iot\iotprotocol\Packet\ModbusFunction;
+namespace iotyun\iotprotocol\Packet\ModbusFunction;
 
-use iot\iotprotocol\Packet\ModbusPacket;
-use iot\iotprotocol\Packet\StartAddressResponse;
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Packet\ModbusPacket;
+use iotyun\iotprotocol\Packet\StartAddressResponse;
+use iotyun\iotprotocol\Utils\Types;
 
 /**
  * Response for Write Multiple Registers (FC=16)

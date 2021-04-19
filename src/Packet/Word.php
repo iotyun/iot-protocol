@@ -1,8 +1,8 @@
 <?php
 
-namespace iot\iotprotocol\Packet;
+namespace iotyun\iotprotocol\Packet;
 
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Utils\Types;
 
 /**
  * Word - 2 bytes, 16bits of data

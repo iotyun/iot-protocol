@@ -1,17 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace iot\iotprotocol\Packet\ModbusFunction;
+namespace iotyun\iotprotocol\Packet\ModbusFunction;
 
 
-use iot\iotprotocol\Exception\InvalidArgumentException;
-use iot\iotprotocol\Packet\ErrorResponse;
-use iot\iotprotocol\Packet\ModbusApplicationHeader;
-use iot\iotprotocol\Packet\ModbusPacket;
-use iot\iotprotocol\Packet\ModbusRequest;
-use iot\iotprotocol\Packet\ProtocolDataUnitRequest;
-use iot\iotprotocol\Utils\Registers;
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Exception\InvalidArgumentException;
+use iotyun\iotprotocol\Packet\ErrorResponse;
+use iotyun\iotprotocol\Packet\ModbusApplicationHeader;
+use iotyun\iotprotocol\Packet\ModbusPacket;
+use iotyun\iotprotocol\Packet\ModbusRequest;
+use iotyun\iotprotocol\Packet\ProtocolDataUnitRequest;
+use iotyun\iotprotocol\Utils\Registers;
+use iotyun\iotprotocol\Utils\Types;
 
 /**
  * Request for Write Multiple Registers (FC=16)

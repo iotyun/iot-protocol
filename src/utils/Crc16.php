@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\iotprotocol\utils;
+namespace iotyun\iotprotocol\utils;
 
 class Crc16
 {

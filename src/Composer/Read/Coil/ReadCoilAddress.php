@@ -1,10 +1,10 @@
 <?php
 
-namespace iot\iotprotocol\Composer\Read\Coil;
+namespace iotyun\iotprotocol\Composer\Read\Coil;
 
 
-use iot\iotprotocol\Composer\Address;
-use iot\iotprotocol\Packet\ModbusResponse;
+use iotyun\iotprotocol\Composer\Address;
+use iotyun\iotprotocol\Packet\ModbusResponse;
 
 class ReadCoilAddress implements Address
 {

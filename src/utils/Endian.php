@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\iotprotocol\Utils;
+namespace iotyun\iotprotocol\Utils;
 
 /**
  * Data types with Double Word (4 bytes) length can have different byte order when sent over wire depending of PLC vendor

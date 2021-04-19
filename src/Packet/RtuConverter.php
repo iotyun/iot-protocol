@@ -1,10 +1,10 @@
 <?php
 
-namespace ModbusTcpClient\Packet;
+namespace iotyun\iotprotocol\Packet;
 
 
-use iot\iotprotocol\Exception\ParseException;
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Exception\ParseException;
+use iotyun\iotprotocol\Utils\Types;
 
 /**
  * Converts Modbus TCP/IP packet to/from Modbus RTU packet.

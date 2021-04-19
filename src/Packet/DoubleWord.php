@@ -1,8 +1,8 @@
 <?php
 
-namespace iot\iotprotocol\Packet;
+namespace iotyun\iotprotocol\Packet;
 
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Utils\Types;
 
 /**
  * Double word - 4 bytes, 32bits of data

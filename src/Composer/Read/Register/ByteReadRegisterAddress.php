@@ -1,10 +1,10 @@
 <?php
 
-namespace iot\iotprotocol\Composer\Read\Register;
+namespace iotyun\iotprotocol\Composer\Read\Register;
 
 
-use iot\iotprotocol\Composer\Address;
-use iot\iotprotocol\Packet\ModbusResponse;
+use iotyun\iotprotocol\Composer\Address;
+use iotyun\iotprotocol\Packet\ModbusResponse;
 
 class ByteReadRegisterAddress extends ReadRegisterAddress
 {

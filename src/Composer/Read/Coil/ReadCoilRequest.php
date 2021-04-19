@@ -1,13 +1,13 @@
 <?php
 
-namespace iot\iotprotocol\Composer\Read\Coil;
+namespace iotyun\iotprotocol\Composer\Read\Coil;
 
 
-use iot\iotprotocol\Composer\Request;
-use iot\iotprotocol\Exception\ModbusException;
-use iot\iotprotocol\Packet\ErrorResponse;
-use iot\iotprotocol\Packet\ModbusFunction\ReadCoilsRequest;
-use iot\iotprotocol\Packet\ResponseFactory;
+use iotyun\iotprotocol\Composer\Request;
+use iotyun\iotprotocol\Exception\ModbusException;
+use iotyun\iotprotocol\Packet\ErrorResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadCoilsRequest;
+use iotyun\iotprotocol\Packet\ResponseFactory;
 
 class ReadCoilRequest implements Request
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\iotprotocol\Exception;
+namespace iotyun\iotprotocol\Exception;
 
 
 class OverflowException extends ParseException

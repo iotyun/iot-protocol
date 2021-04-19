@@ -1,8 +1,8 @@
 <?php
 
-namespace iot\iotprotocol\Packet;
+namespace iotyun\iotprotocol\Packet;
 
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Utils\Types;
 
 /**
  * Quad word - 8 bytes, 64bits of data

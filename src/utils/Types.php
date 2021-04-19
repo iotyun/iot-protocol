@@ -1,11 +1,11 @@
 <?php
 
-namespace iot\iotprotocol\Utils;
+namespace iotyun\iotprotocol\Utils;
 
 
-use iot\iotprotocol\Exception\InvalidArgumentException;
-use iot\iotprotocol\Exception\OverflowException;
-use iot\iotprotocol\Exception\ParseException;
+use iotyun\iotprotocol\Exception\InvalidArgumentException;
+use iotyun\iotprotocol\Exception\OverflowException;
+use iotyun\iotprotocol\Exception\ParseException;
 
 final class Types
 {

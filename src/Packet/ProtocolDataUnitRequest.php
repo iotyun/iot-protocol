@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\iotprotocol\Packet;
+namespace iotyun\iotprotocol\Packet;
 
 
 /*
@@ -12,8 +12,8 @@ namespace iot\iotprotocol\Packet;
  * 0003: The total number of registers requested. (read 3 registers 40108 to 40110)
  */
 
-use iot\iotprotocol\Exception\InvalidArgumentException;
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Exception\InvalidArgumentException;
+use iotyun\iotprotocol\Utils\Types;
 
 abstract class ProtocolDataUnitRequest extends ProtocolDataUnit
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\iotprotocol\Utils;
+namespace iotyun\iotprotocol\Utils;
 
 
 class Registers

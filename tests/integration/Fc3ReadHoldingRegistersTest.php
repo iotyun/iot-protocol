@@ -2,8 +2,8 @@
 
 namespace Test\integration;
 
-use iot\iotprotocol\Packet\ModbusFunction\ReadHoldingRegistersRequest;
-use iot\iotprotocol\Packet\ResponseFactory;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadHoldingRegistersRequest;
+use iotyun\iotprotocol\Packet\ResponseFactory;
 use Tests\integration\MockServerTestCase;
 
 class Fc3ReadHoldingRegistersTest extends MockServerTestCase

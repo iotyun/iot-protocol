@@ -1,9 +1,9 @@
 <?php
 
-namespace iot\iotprotocol\Composer\Read\Register;
+namespace iotyun\iotprotocol\Composer\Read\Register;
 
 
-use iot\iotprotocol\Composer\AddressSplitter;
+use iotyun\iotprotocol\Composer\AddressSplitter;
 
 class ReadRegisterAddressSplitter extends AddressSplitter
 {

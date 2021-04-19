@@ -1,6 +1,6 @@
 <?php
 
-namespace iot\iotprotocol\Packet;
+namespace iotyun\iotprotocol\Packet;
 
 
 // Marker interface to help distinguish requests from responses

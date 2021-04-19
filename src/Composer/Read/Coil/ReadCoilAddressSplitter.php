@@ -1,9 +1,9 @@
 <?php
 
-namespace iot\iotprotocol\Composer\Read\Coil;
+namespace iotyun\iotprotocol\Composer\Read\Coil;
 
 
-use iot\iotprotocol\Composer\AddressSplitter;
+use iotyun\iotprotocol\Composer\AddressSplitter;
 
 class ReadCoilAddressSplitter extends AddressSplitter
 {

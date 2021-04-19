@@ -1,10 +1,10 @@
 <?php
 
-namespace iot\iotprotocol\Packet;
+namespace iotyun\iotprotocol\Packet;
 
 
-use iot\iotprotocol\Exception\ParseException;
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Exception\ParseException;
+use iotyun\iotprotocol\Utils\Types;
 
 abstract class ByteCountResponse extends ProtocolDataUnit implements ModbusResponse
 {

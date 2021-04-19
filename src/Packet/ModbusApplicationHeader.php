@@ -1,11 +1,11 @@
 <?php
 
-namespace iot\iotprotocol\Packet;
+namespace iotyun\iotprotocol\Packet;
 
 
-use iot\iotprotocol\Exception\InvalidArgumentException;
-use iot\iotprotocol\Exception\ModbusException;
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Exception\InvalidArgumentException;
+use iotyun\iotprotocol\Exception\ModbusException;
+use iotyun\iotprotocol\Utils\Types;
 
 /**
  * Modbus packet header.

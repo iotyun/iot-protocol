@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace iot\iotprotocol\Packet\ModbusFunction;
+namespace iotyun\iotprotocol\Packet\ModbusFunction;
 
-use iot\iotprotocol\Exception\InvalidArgumentException;
-use iot\iotprotocol\Exception\ModbusException;
-use iot\iotprotocol\Packet\ByteCountResponse;
-use iot\iotprotocol\Packet\ModbusPacket;
-use iot\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Exception\InvalidArgumentException;
+use iotyun\iotprotocol\Exception\ModbusException;
+use iotyun\iotprotocol\Packet\ByteCountResponse;
+use iotyun\iotprotocol\Packet\ModbusPacket;
+use iotyun\iotprotocol\Utils\Types;
 
 /**
  * Response for Read Coils (FC=01)

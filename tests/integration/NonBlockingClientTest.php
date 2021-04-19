@@ -2,13 +2,13 @@
 
 namespace Tests\integration;
 
-use iot\iotprotocol\Composer\Read\ReadRegistersBuilder;
-use iot\iotprotocol\Composer\Write\WriteRegistersBuilder;
-use iot\iotprotocol\Exception\ModbusException;
-use iot\iotprotocol\Network\NonBlockingClient;
-use iot\iotprotocol\Network\ResultContainer;
-use iot\iotprotocol\Packet\ModbusFunction\ReadHoldingRegistersRequest;
-use iot\iotprotocol\Packet\ModbusFunction\WriteMultipleRegistersResponse;
+use iotyun\iotprotocol\Composer\Read\ReadRegistersBuilder;
+use iotyun\iotprotocol\Composer\Write\WriteRegistersBuilder;
+use iotyun\iotprotocol\Exception\ModbusException;
+use iotyun\iotprotocol\Network\NonBlockingClient;
+use iotyun\iotprotocol\Network\ResultContainer;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadHoldingRegistersRequest;
+use iotyun\iotprotocol\Packet\ModbusFunction\WriteMultipleRegistersResponse;
 
 class NonBlockingClientTest extends MockServerTestCase
 {

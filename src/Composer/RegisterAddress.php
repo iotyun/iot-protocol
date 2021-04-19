@@ -1,9 +1,9 @@
 <?php
 
-namespace iot\iotprotocol\Composer;
+namespace iotyun\iotprotocol\Composer;
 
 
-use iot\iotprotocol\Exception\InvalidArgumentException;
+use iotyun\iotprotocol\Exception\InvalidArgumentException;
 
 abstract class RegisterAddress implements Address
 {

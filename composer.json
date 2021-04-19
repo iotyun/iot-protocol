@@ -3,9 +3,7 @@
     "description": "Internet of things communication protocol analysis plugs",
     "homepage": "http://www.iotyun.vip/",
     "keywords": [
-        "NB-IOT",
-        "huawei",
-        "dianxin",
+        "iotyun",
         "iot",
         "sdk"
     ],

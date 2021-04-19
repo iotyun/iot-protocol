@@ -1,13 +1,13 @@
 <?php
 
-namespace iot\iotprotocol\Composer\Read\Register;
+namespace iotyun\iotprotocol\Composer\Read\Register;
 
 
-use iot\iotprotocol\Composer\Request;
-use iot\iotprotocol\Exception\ModbusException;
-use iot\iotprotocol\Packet\ErrorResponse;
-use iot\iotprotocol\Packet\ModbusFunction\ReadHoldingRegistersRequest;
-use iot\iotprotocol\Packet\ResponseFactory;
+use iotyun\iotprotocol\Composer\Request;
+use iotyun\iotprotocol\Exception\ModbusException;
+use iotyun\iotprotocol\Packet\ErrorResponse;
+use iotyun\iotprotocol\Packet\ModbusFunction\ReadHoldingRegistersRequest;
+use iotyun\iotprotocol\Packet\ResponseFactory;
 
 class ReadRegisterRequest implements Request
 {
