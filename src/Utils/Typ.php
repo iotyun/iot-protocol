@@ -1,7 +1,6 @@
 <?php
 
-namespace iotyun\iotprotocol\Utils;
-
+namespace iotyun\iotprotocol\utils;
 
 use iotyun\iotprotocol\Exception\InvalidArgumentException;
 use iotyun\iotprotocol\Exception\OverflowException;
@@ -633,5 +632,4 @@ final class Types
 
         return pack("a{$byteCount}", $raw);
     }
-
 }
