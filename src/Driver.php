@@ -4,6 +4,8 @@ namespace iotyun\iotprotocol;
 
 use think\facade\Log;
 use GatewayWorker\Lib\Gateway;
+use iotyun\iotprotocol\Utils\Types;
+use iotyun\iotprotocol\Utils\Crc16;
 
 class Driver
 {
@@ -28,10 +30,15 @@ class Driver
         // $app->initialize();
 		// $appid = $data[0] . $data[1];
 		// $pid = $data[2] . $data[3];
-		$driver_addr = hexdec(bin2hex($data[0]));
-		$function_code = hexdec(bin2hex($data[1]));
-		$data_length = hexdec(bin2hex($data[2]));
-		switch ($function_code)
+		$get_session = Gateway::getSession($client_id);
+		$message = array(
+			'addr' => hexdec(bin2hex($data[0])),
+			'function_code' => hexdec(bin2hex($data[1])),
+			'data_length' => hexdec(bin2hex($data[2]))
+		);
+		
+		
+		switch ($message['function_code'])
 		{
 			case 0x01:
 				$code_info = "读寄存器输出状态";
@@ -41,6 +48,10 @@ class Driver
 				break;
 			case 0x03:
 				$code_info = "读数据寄存器值";
+				for ($i = 0; $i < $message['data_length']; $i += 4)
+				{
+					$message['data'][] = array('register' => $get_session['register'] + ($i/2), 'value' => Types::parseFloat($data[3+$i] . $data[4+$i] . $data[5+$i] . $data[6+$i]));
+				}
 				
 				
 				break;
@@ -61,7 +72,7 @@ class Driver
 				break;
 		}
 		
-		$data_array = array('appid' => $driver->appid, 'productid' => $driver->productid, 'driverid' => $driver_addr, 'function_code' => $function_code, 'code_info' => $code_info,  'data_length' => $data_length);
+		$data_array = array('appid' => $driver->appid, 'productid' => $driver->productid, 'driverid' => $driver->driverid, 'code_info' => $code_info,  'message' => $message);
 		return json_encode($data_array);
 		//return $info;
     }

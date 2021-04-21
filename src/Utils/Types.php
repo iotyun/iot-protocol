@@ -31,7 +31,7 @@ final class Types
 
     /**
      * Parse binary string (1 word) with given endianness byte order to 16bit unsigned integer (2 bytes to uint16)
-     *
+     *将给定尾数字节顺序的二进制字符串（1个字）解析为16位无符号整数（2个字节到uint16）
      * @param string $word binary string to be converted to unsigned 16 bit integer
      * @param int $fromEndian byte and word order for modbus binary data
      * @return int
@@ -58,7 +58,7 @@ final class Types
 
     /**
      * Parse binary string (1 word) with given endianness byte order to 16bit signed integer (2 bytes to int16)
-     *
+     *将给定尾数字节顺序的二进制字符串（1个字）解析为16位有符号整数（2个字节为int16）
      * @param string $word binary string to be converted to signed 16 bit integer
      * @param int $fromEndian byte and word order for modbus binary data
      * @return int
@@ -80,7 +80,7 @@ final class Types
 
     /**
      * Parse binary string (double word) with big endian byte order to 32bit unsigned integer (4 bytes to uint32)
-     *
+     *将具有大端字节顺序的二进制字符串（双字）解析为32位无符号整数（4字节到uint32）
      * NB: On 32bit php and having highest bit set method will return float instead of int value. This is due 32bit php supports only 32bit signed integers
      *
      * @param string $doubleWord binary string to be converted to signed 16 bit integer
@@ -139,6 +139,7 @@ final class Types
 
     /**
      * Convert 2/4/8 byte into a signed integer. This is needed to make code 32bit php and 64bit compatible as Pack function
+	 将2/4/8字节转换为有符号整数。这是使32位php和64位php代码作为Pack函数兼容所必需的
      * does not have options to convert big endian signed integers
      * taken from http://stackoverflow.com/q/13322327/2514290
      * @param $uint
@@ -162,7 +163,7 @@ final class Types
 
     /**
      * Parse binary string (1 char) to 8bit unsigned integer (1 bytes to uint8)
-     *
+     *将二进制字符串（1个字符）解析为8位无符号整数（1个字节到uint8）
      * @param string $char binary string to be converted to unsigned 8 bit unsigned integer
      * @return int
      */
@@ -184,7 +185,7 @@ final class Types
 
     /**
      * Convert array of PHP data to array of bytes. Each element of $data is converted to 1 byte (usigned int8)
-     *
+     *将PHP数据数组转换为字节数组。$data的每个元素转换为1字节（usigned int8）
      * @param array $data
      * @return string
      */
@@ -234,7 +235,7 @@ final class Types
 
     /**
      * Check if N-th bit is set in data. NB: Bits are counted from 0 and right to left.
-     *
+     *检查数据中是否设置了第N位。注意：位从0开始从右到左计数
      * @param $data int|string data from where bit is checked
      * @param $bit int to be checked
      * @return bool
@@ -270,7 +271,7 @@ final class Types
 
     /**
      * Parse binary string representing real in given endianness to float (double word/4 bytes to float)
-     *
+     *解析二进制字符串，表示给定的浮点值的实数（双字/4字节浮点值）
      * @param string $binaryData binary byte string to be parsed to float
      * @param int $fromEndian byte and word order for modbus binary data
      * @return float
@@ -300,7 +301,7 @@ final class Types
 
     /**
      * Parse binary string representing 64 bit unsigned integer to 64bit unsigned integer in given endianness (quad word/8 bytes to 64bit int)
-     *
+     *将表示64位无符号整数到64位无符号整数的二进制字符串解析为给定endianness（四字/8字节到64位int）
      * @param string $binaryData binary string representing 64 bit unsigned integer in big endian order
      * @param int $fromEndian byte and word order for modbus binary data
      * @return int
@@ -339,7 +340,7 @@ final class Types
 
     /**
      * Parse binary string representing 64 bit signed integer to 64bit signed integer in given endianness  (quad word/8 bytes to 64bit int)
-     *
+     *将表示64位有符号整数到64位有符号整数的二进制字符串解析为给定字节数（四字/8字节到64位整数）
      * @param string $binaryData binary string representing 64 bit signed integer in big endian order
      * @param int $fromEndian byte and word order for modbus binary data
      * @return int
@@ -371,7 +372,7 @@ final class Types
 
     /**
      * Parse ascii string from registers to utf-8 string. Supports extended ascii codes ala 'ø' (decimal 248)
-     *
+     *将寄存器中的ascii字符串解析为utf-8字符串。支持扩展ascii码ala'ø'（十进制248）
      * @param string $binaryData binary string representing register (words) contents
      * @param int $length number of characters to parse from data
      * @param int $fromEndian byte and word order for modbus binary data
@@ -385,7 +386,7 @@ final class Types
 
     /**
      * Parse string from registers to utf-8 string.
-     *
+     *将寄存器中的字符串解析为utf-8字符串。
      * @param string $binaryData binary string representing register (words) contents
      * @param int $length number of characters to parse from data
      * @param string $fromEncoding
@@ -427,7 +428,7 @@ final class Types
 
     /**
      * Convert Php integer to modbus register (2 bytes of data) in big endian byte order
-     *
+     *以大端字节顺序将Php整数转换为modbus寄存器（2字节数据）
      * @param int $data integer to be converted to register/word (binary string of 2 bytes)
      * @return string binary string with big endian byte order
      */
@@ -439,7 +440,7 @@ final class Types
 
     /**
      * Convert Php data as it would be 1 byte to binary string (1 char)
-     *
+     *将1字节的Php数据转换为二进制字符串（1个字符）
      * @param int $data 1 bit integer to be converted to binary byte string
      * @return string binary string with length of 1 char
      */
@@ -593,7 +594,7 @@ final class Types
 
     /**
      * Convert PHP string to binary string suitable for modbus packet
-     *
+     *将PHP字符串转换为适用于modbus数据包的二进制字符串
      * @param string $string string to convert
      * @param int $registersCount number of registers to hold string bytes
      * @param string|null $toEncoding in which string encoding data is expected
