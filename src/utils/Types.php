@@ -29,7 +29,7 @@ final class Types
         // no access, this is an utility class
     }
 
-    /**
+    /** 
      * Parse binary string (1 word) with given endianness byte order to 16bit unsigned integer (2 bytes to uint16)
      *
      * @param string $word binary string to be converted to unsigned 16 bit integer
