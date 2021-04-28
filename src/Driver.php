@@ -73,6 +73,7 @@ class Driver
 		}
 		
 		$data_array = array('appid' => $driver->appid, 'productid' => $driver->productid, 'driverid' => $driver->driverid, 'code_info' => $code_info,  'message' => $message);
+		Gateway::updateSession($client_id, array('function_code' => '', 'register' => '', 'register_length' => ''));
 		return json_encode($data_array);
 		//return $info;
     }
